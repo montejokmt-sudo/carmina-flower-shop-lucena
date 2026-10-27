@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carmina Flower Shop Lucena</title>
+<style>
+
+:root {
+    --wine: #a5285cfb;
+    --pink: #ff69b4;
+    --light: #fff4f6;
+    --soft: #ffe5eb;
+    --ink: #38323a;
+    --muted: #746a70;
+    --white: #fff;
+}
+
+*{box-sizing:border-box;margin:0;
+padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;
+background:#fffafb;
+color:var(--ink);
+line-height:1.6}
+
+header{position:sticky;
+  top:0;z-index:20;
+  background:#fff;
+  box-shadow:0 3px 16px #6e193010;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px}
+
+.logo{font-weight:800;
+font-size:clamp(16px,2vw,22px);
+color:var(--wine);
+white-space:nowrap}
+
+nav{display:flex;
+gap:8px;align-items:center;
+flex-wrap:wrap;
+justify-content:center}
+
+nav a,.nav-button{border:0;
+  background:transparent;
+  text-decoration:none;
+  color:#655b61;
+  padding:9px 12px;
+  border-radius:22px;
+  font:inherit;
+  font-size:14px;
+  cursor:pointer}
+
+nav a:hover,nav a.active{background:var(--light);
+  color:var(--wine)}
+.nav-button,.btn{display:inline-block;
+  background:var(--pink);
+  color:white!important;
+  border:0;
+  text-decoration:none;
+  padding:11px 22px;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s}
+
+.nav-button:hover,.btn:hover{background:var(--wine);
+  transform:translateY(-1px)}
+.page{display:none;
+  min-height:calc(100vh - 75px);
+  animation:fade .25s ease}
+.page.active{display:block}
+
+@keyframes fade{from{opacity:.5;
+  transform:translateY(5px)}to{opacity:1;
+    transform:translateY(0)}}
+
+.hero{
+  min-height:500px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:75px 7%;
+  background:
+    linear-gradient(
+      rgba(255,245,248,0.35),
+      rgba(255,245,248,0.35)
+    ),
+    url("https://ae01.alicdn.com/kf/S52a039aa8f5348889a9e5d155a14825dj/Mehofond-Spring-Flower-Shop-Photography-Backdrop-Floral-Vase-Bicycle-Decor-Newborn-Baby-Shower-Portrait-Background-Photo.jpg");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.eyebrow{letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:12px;font-weight:800;
+  color:var(--wine)}
+
+h1{font-size:clamp(36px,5vw,56px);
+  line-height:1.1;color:var(--wine);
+  margin:12px 0 18px}
+
+.hero p{font-size:17px;
+  max-width:650px;margin:0 auto 22px;
+  color:#51464c}
+.outline-btn{display:inline-block;
+  padding:10px 22px;
+  border:1px solid var(--wine);
+  border-radius:30px;
+  color:var(--wine);
+  text-decoration:none;
+  margin:5px}
+
+.hours{font-size:13px!important;
+  margin-top:18px!important}
+
+.section{padding:55px 6%;
+  max-width:1300px;
+  margin:auto}
+
+.section-heading{text-align:center;
+  margin-bottom:28px}
+.section-heading h2{color:var(--wine);
+  font-size:clamp(27px,3vw,36px);
+  line-height:1.2;
+  margin-bottom:8px}
+.section-heading p{color:var(--muted)}
+.feature-grid,.product-grid,.collection-grid,.about-grid,.contact-grid{display:grid;gap:20px}
+
+.feature-grid{grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-bottom:48px}
+.feature{background:var(--soft);
+  padding:22px 16px;
+  text-align:center;border-radius:16px}
+
+.feature .emoji{font-size:30px}.feature h3{color:var(--wine);
+  font-size:17px;
+  margin:6px 0}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    gap: 15px;
+    justify-content: center;
+    align-items: start;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.product-card:hover{transform:translateY(-5px);
+  box-shadow:0 12px 28px #6e19301b}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background: #ffe8ed;
+}
+.product-info{padding:17px;
+  text-align:center}
+
+.product-info h3{color:var(--wine);
+  font-size:18px}
+
+.price{font-size:20px;
+  color:var(--wine);
+  font-weight:900;
+  margin:5px 0 12px}
+
+.product-info .btn{padding:8px 17px;
+  font-size:14px}
+
+.collection-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.collection-grid .product-card img{height:190px}
+
+.banner{background:var(--light);
+  text-align:center;
+  padding:38px 20px;
+  border-radius:20px;
+  margin-top:35px}
+
+.about-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.info-card,.form-card,.payment-card{padding:25px;
+  background:#fff;
+  border:1px solid #f6dfe6;
+  border-radius:18px;
+  box-shadow:0 5px 20px #6e19300b}
+
+.info-card h3,.form-card h3,.payment-card h3{color:var(--wine);margin-bottom:10px}
+.info-card ul{padding-left:20px}
+.contact-grid{grid-template-columns:1fr 1fr;align-items:start}
+
+label{display:block;
+  font-weight:650;
+  font-size:14px;
+  margin:12px 0 5px}
+
+input,select,textarea{width:100%;padding:12px;
+  border:1px solid #e8cbd4;
+  border-radius:10px;
+  background:#fffafb;
+  font:inherit;
+  outline-color:var(--pink)}
+
+textarea{min-height:100px;
+  resize:vertical}
+
+.form-card .btn{margin-top:16px;
+  width:100%}
+.qr{width:190px;
+  height:190px;
+  margin:15px auto;
+  background:var(--light);
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  padding:8px}
+
+.qr img{max-width:100%;
+  max-height:100%;
+  object-fit:contain}
+
+.tag{display:inline-block;
+  background:var(--light);
+  padding:5px 10px;
+  border-radius:20px;
+  margin:4px;
+  font-size:12px}
+
+footer{text-align:center;
+  background:var(--wine);
+  color:#fff;
+  padding:25px 15px;
+  font-size:13px}
+footer a{color:white}
+
+.notice{display:none;
+  background:#e8f7ed;
+  color:#20653a;
+  padding:12px;
+  border-radius:10px;
+  margin-top:12px}
+
+.empty-note{font-size:13px;
+  color:var(--muted);margin-top:10px}
+
+@media(max-width:900px){header{flex-direction:column;gap:8px}.feature-grid{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:520px){header{padding:12px 4%}.logo{white-space:normal;text-align:center}nav{gap:2px}nav a{padding:7px 8px;font-size:12px}.nav-button{padding:8px 12px;font-size:12px}.hero{min-height:450px;padding:55px 6%}.section{padding:40px 5%}.feature-grid,.product-grid,.collection-grid{grid-template-columns:1fr}.product-card img,.collection-grid .product-card img{height:240px}}
+#bestsellers {
+  background:
+    linear-gradient(
+  rgba(255, 247, 249, 0.35),
+  rgba(255, 247, 249, 0.35)
+    ),
+    url("https://i.pinimg.com/736x/9d/d7/8a/9dd78affd7fa54d715612d5bb7b55797.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 5%;
+}
+
+#collection {
+  background:
+    linear-gradient(
+      rgba(255, 247, 249, 0.35),
+      rgba(255, 247, 249, 0.35)
+    ),
+    url("https://scontent.fmnl33-2.fna.fbcdn.net/v/t39.30808-6/636328931_1352074006936473_8170213955087230082_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEBWZZn1F1qGNNuv6wgDLvBQ9ZpQT_WrFxD1mlBP9asXIytjBFupG3r0vbe2OpOa8uYHPMbNPxXXt_PGEdDIoN2&_nc_ohc=sbjfRlqs0XEQ7kNvwGJ7hcP&_nc_oc=AdodTacpbzdCf-pYNOXJ3vcbFyqOHg67ZTKHRgMSxp62LwRS4vHOs6n_wZtA8NYN6Mo&_nc_zt=23&_nc_ht=scontent.fmnl33-2.fna&_nc_gid=TbRQo2UBW46-A7gvCc-hWg&_nc_ss=7b2a8&oh=00_AQOVXcT3inUczlS5EnWr4oZ8ht3JMjPPWJNhpxqixvlMng&oe=6ADF746B");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 5%;
+}
+
+#about {
+  background:
+    linear-gradient(
+      rgba(255, 245, 248, 0.35),
+      rgba(255, 245, 248, 0.35)
+    ),
+    url("https://png.pngtree.com/thumb_back/fw800/background/20240606/pngtree-colorful-flowers-on-showcase-entrance-to-a-small-flower-shop-image_15742129.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 5%;
+}
+
+#bestsellers h2 {
+  color: #000000;
+}
+
+#bestsellers p {
+  color: #000000;
+}
+
+#collection h2 {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+
+#collection p {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+
+#about h2 {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+
+#about p {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+
+
+.flower-video-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff4f6;
+}
+
+.flower-video-section h2 {
+    color: #a5284d;
+    margin-bottom: 10px;
+}
+
+.flower-video-section p {
+    color: #38323a;
+    margin-bottom: 20px;
+}
+
+.flower-video-section video {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+
+#order {
+    background-image: url("https://th.bing.com/th/id/OIP.iget0EgAepEGQ2HMmS_3LAHaJo?w=130&h=180&c=7&r=0&o=7&pid=1.7&rm=3");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 50px 5%;
+    position: relative;
+
+}
+#order .order-card,
+#order .order-details,
+#order .order-info {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ffd1df;
+    border-radius: 18px;
+}
+
+#flower-shop-products {
+    padding: 45px 5%;
+    background: #fff4f8;
+    text-align: center;
+    color: #49323e;
+}
+
+#flower-shop-products h2 {
+    color: #b52669;
+    margin-bottom: 10px;
+}
+
+.shop-subtitle {
+    color: #806b77;
+    margin-bottom: 30px;
+}
+
+.flower-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.flower-product {
+    background: white;
+    border: 1px solid #f6d4e3;
+    border-radius: 18px;
+    padding: 12px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 5px 18px rgba(181, 38, 105, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.flower-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(181, 38, 105, 0.16);
+}
+
+.flower-product img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.flower-product h3 {
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.flower-category {
+    color: #c34b84;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 10px 0 4px;
+}
+
+.flower-price {
+    color: #b52669;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #c12670;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.favorite-btn.active {
+    background: #ffe1ed;
+    color: #e51c68;
+}
+
+.add-flower-btn,
+.checkout-flower-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(90deg, #ed5da0, #b52683);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-flower-btn:hover,
+.checkout-flower-btn:hover {
+    filter: brightness(0.93);
+}
+
+.flower-cart {
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 22px;
+    background: white;
+    border: 1px solid #f6d4e3;
+    border-radius: 18px;
+    text-align: left;
+}
+
+.flower-cart h3 {
+    color: #b52669;
+}
+
+.flower-cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5dce7;
+}
+
+.flower-cart-row button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 7px;
+    padding: 5px 9px;
+    background: #ffe6f0;
+    color: #a51f61;
+}
+
+@media (max-width: 700px) {
+    .flower-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .flower-product img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 420px) {
+    .flower-products {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hamburger menu sa cellphone */
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    border: 1px solid #ed8ba2;
+    color: #a5284d;
+    font-size: 25px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Sparkling flower effects */
+.sparkle-flower {
+  position: fixed;
+  z-index: 10001;
+  pointer-events: none;
+  font-size: 25px;
+  animation: flowerSparkle 1.2s ease-out forwards;
+}
+
+@keyframes flowerSparkle {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3) rotate(0deg);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(var(--moveX), -35px)
+      scale(1.3) rotate(45deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--moveX), -100px)
+      scale(0.5) rotate(120deg);
+  }
+}
+
+.sparkle-glow {
+  animation: flowerGlow 0.7s ease-in-out;
+}
+
+@keyframes flowerGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.5) drop-shadow(0 0 12px #ff80bd);
+  }
+}
+
+/* Click image to enlarge */
+.image-viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-viewer.active {
+  display: flex;
+}
+
+.image-viewer img {
+  max-width: 90%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #ff8fbd;
+  animation: zoomIn 0.3s ease;
+}
+
+.image-viewer .close-viewer {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.product-card img {
+  cursor: zoom-in;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* CUSTOMER REVIEWS */
+.reviews-section {
+  padding: 70px 6%;
+  background: linear-gradient(135deg, #fff4f7, #ffe5ec);
+}
+
+.reviews-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.reviews-label {
+  color: #a5284d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.reviews-heading h2 {
+  color: #a5284d;
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.reviews-heading p,
+.review-form-box > p {
+  color: #746a70;
+  line-height: 1.7;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 45px;
+}
+
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px #a5284d14;
+  border: 1px solid #ffe0e8;
+  transition: transform 0.25s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-stars {
+  color: #f5a623;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.review-card h3 {
+  color: #a5284d;
+  margin: 12px 0;
+}
+
+.review-card p {
+  color: #51474d;
+  line-height: 1.7;
+}
+
+.reviewer {
+  display: block;
+  margin-top: 18px;
+  color: #a5284d;
+  font-weight: bold;
+}
+
+.review-form-box {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px #a5284d18;
+}
+
+.review-form-box h3 {
+  color: #a5284d;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+#reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#reviewForm label {
+  color: #514047;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+#reviewForm input,
+#reviewForm select,
+#reviewForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #efc5d1;
+  border-radius: 10px;
+  font: inherit;
+  background: #fffafb;
+}
+
+#reviewForm textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.review-submit {
+  background: #a5284d;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.review-submit:hover {
+  background: #7f1d3a;
+}
+
+.review-note {
+  font-size: 12px;
+  color: #746a70;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .reviews-section {
+    padding: 45px 5%;
+  }
+
+  .reviews-heading h2 {
+    font-size: 29px;
+  }
+
+  .review-form-box {
+    padding: 20px;
+  }
+}
+
+</style>
+</head>
+<body>
+  
+<div class="image-viewer" id="imageViewer">
+  <button class="close-viewer" id="closeViewer">&times;</button>
+  <img id="viewerImage" src="" alt="Enlarged flower picture">
+</div>
+
+<header>
+ 
+  <div class="logo">🌸 Carmina Flower Shop Lucena</div>
+  <nav aria-label="Main navigation">
+    <a href="#home" data-page="home" class="active">Home</a>
+    <a href="#bestsellers" data-page="bestsellers">Best Sellers</a>
+    <a href="#collection" data-page="collection">Collection</a>
+    <a href="#about" data-page="about">About</a>
+    <a href="#payment" data-page="payment">Payment</a>
+    <a href="#order" data-page="order" class="nav-button">Order Now</a>
+ 
+  </nav>
+</header>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+  ☰
+</button>
+
+
+<main>
+<section class="page active" id="home">
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Fresh blooms • Thoughtful gifts</div>
+      <h1>Fresh Flowers<br>for Every Occasion</h1>
+      <p>Specializing in unique flower designs for bouquets, weddings, and special events — delivered fresh in Lucena City.</p>
+      <a class="btn" href="#collection" data-page="collection">Explore Flowers</a>
+      <a class="outline-btn" href="https://m.me/carminaflowershop.lucena" target="_blank" rel="noopener">Order via Messenger</a>
+      <p class="hours">Open daily 8:00 AM–7:00 PM · Free delivery in Lucena City for orders ₱1,000+</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-heading"><h2>Why Choose Carmina?</h2><p>Little details that make every gift feel special.</p></div>
+    <div class="feature-grid">
+      <article class="feature"><div class="emoji">🌸</div><h3>Fresh & Local</h3><p>Beautiful blooms for meaningful moments and We offer fresh and beautiful flowers, carefully arranged to make every occasion special. From romantic roses to colorful bouquets, every flower is prepared with love and care..</p></article>
+      <article class="feature"><div class="emoji">🚚</div><h3>Local Delivery</h3><p>Delivery around Lucena and nearby areas.Carmina Flower Shop Lucena offers convenient flower delivery to make every special moment more memorable. We carefully prepare each bouquet and deliver your beautiful flowers with love and care. 💐</p></article>
+      <article class="feature"><div class="emoji">💐</div><h3>Made with Love</h3><p>Thoughtfully arranged bouquets and gifts.At Carmina Flower Shop Lucena, every bouquet is carefully arranged with love, creativity, and attention to detail. We create beautiful floral arrangements that help you express your feelings and make every special occasion more meaningful. 🌸</p></article>
+      <article class="feature"><div class="emoji">💗</div><h3>For Every Occasion</h3><p>Flowers for birthdays, anniversaries, and more. Make every special moment memorable with beautiful flower arrangements from Carmina Flower Shop Lucena. Perfect for celebrations, surprises, and expressing love to someone special. 🌸</p></article>
+    </div>
+    <div class="banner"><h2 style="color:var(--wine)">A little flower can say a lot.</h2><p>Find an arrangement for someone special.</p><br><a href="#bestsellers" data-page="bestsellers" class="btn">See Best Sellers</a></div>
+  </div>
+  
+<section class="flower-video-section">
+    <h2>Our Beautiful Flower Arrangements 🌸</h2>
+    <p>See the beauty of our fresh flowers.</p>
+
+    
+</section>
+
+</section>
+
+<section class="page" id="bestsellers">
+  <div class="section">
+    <div class="section-heading"><h2>Best Sellers</h2><p>Customer favorites for celebrations, surprises, and thoughtful gifts.</p></div>
+    <div class="product-grid">
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/638781978_1352069943603546_4067422867694203766_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeF_6s5G61VzMEJloj-fe2KdqEnS-3Fd8bCoSdL7cV3xsL2QgFbesBjqVg6wEb35VskgPdjoEy4SUW9LT52dzsXp&_nc_ohc=PaPcXHg7SrsQ7kNvwHqA3Qa&_nc_oc=Adp4ih5Vl1oKWiOooDd4VHa1Ezni0Lv9vzaWhjXB8tNAjK7604EIvr4s8wRwYs6NHJ8&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&_nc_gid=OPVwjr9wUPLzu7U0tuBRRQ&_nc_ss=7b2a8&oh=00_AQPOxXhIhwOtACJEdPPDuWd5_ZbAzPfUAoObvNf9K1uuBA&oe=6ADF7C51"this.onerror=null;this.><div class="product-info"><h3>Roses</h3><div class="price">₱600</div><a class="btn order-link" href="#order" data-product="Roses">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/687942849_1411474834332183_7968162739775808677_n.jpg?stp=c0.78.1204.1204a_cp6_dst-jpg_tt6&cstp=mx1204x1204&ctp=s206x206&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEfdStu6fWcfdMH5oly74o8ILOXCQyVVF0gs5cJDJVUXabQpVccmJ0s5NZQy-d6NZi_Vd99qz5tV3AOiNhx3_cd&_nc_ohc=NcWvGHYgbBsQ7kNvwEzMrL0&_nc_oc=Adoj0-p_6_IAgFZ-y-BKECJfLbxxsFMe-FObS7CfhcXewHxSO6c9IkXgZF0cW3AqQUg&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&_nc_gid=keu71Y93NmuXRi3ia0kGUQ&_nc_ss=7b2a8&oh=00_AQN7gwn-SPqIrbb2YFSuP6HwurjZWNkZeTJQxkke80HGNA&oe=6ADF9DFD" alt="Mixed rose bouquet"><div class="product-info"><h3>12 Roses Mix</h3><div class="price">₱1,500</div><a class="btn order-link" href="#order" data-product="12 Roses Mix">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl33-1.fna.fbcdn.net/v/t39.30808-6/762466124_1497462559064283_468378966949265249_n.jpg?stp=c0.141.1284.1284a_dst-jpg_tt6&cstp=mx1284x1284&ctp=s206x206&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e838&_nc_eui2=AeGp7APbn63HQwOGnoqFy9F6woddPzTlP0jCh10_NOU_SFoJAepD4lX8SWSaOulqWXQi4amxIqTqgz9MSKUG2peX&_nc_ohc=5FOlED7BZd4Q7kNvwFN1CXH&_nc_oc=AdoRZwJ1KKph-8dwGZLF9shZUhSvznZYmeYXbj0fgcq3am3MH9E6NV29WnMVHm1hoNM&_nc_zt=23&_nc_ht=scontent.fmnl33-1.fna&_nc_gid=3A7ickDZAphI4Bm5npBKaw&_nc_ss=7b2a8&oh=00_AQMFLcemYZCmFyeBk2tQmH3Kivf_nYvmpFqDprIirst7OA&oe=6ADF777D" alt="Large colorful flower arrangement"><div class="product-info"><h3>Big Surprise Flowers</h3><div class="price">₱3,000</div><a class="btn order-link" href="#order" data-product="Big Surprise Flowers">Order This</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="collection">
+  <div class="section">
+    <div class="section-heading"><h2>Our Flower Collection</h2><p>Choose a bouquet or arrangement that matches your moment.</p></div>
+    <div class="collection-grid">
+      
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl33-5.fna.fbcdn.net/v/t39.30808-6/843764945_1557113273099211_4065063587076032407_n.jpg?stp=dst-jpg_tt6&cstp=mx1512x2016&ctp=s1512x2016&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEtSM4__HEozZFvKKrETuwJ1fkL4Po1EKzV-Qvg-jUQrDTggPH59DWFlNIHWRj1DNrgX0HDqa0yPh43tThGarUr&_nc_ohc=Up3dtO6a6PMQ7kNvwF4BXka&_nc_oc=Adov4DdN96WcgyNNeHJLYHOez_QCp4LwFNXvCkMOPXwFS94WyQ0ujrUxi9TwxkpX-9k&_nc_zt=23&_nc_ht=scontent.fmnl33-5.fna&_nc_gid=__rXHLRUWA3cojknyYZDvA&_nc_ss=7b2a8&oh=00_AQOirP2MDvEmUAsp_OsN_Si0w4yf9KJ4T24PWopqO46hXw&oe=6ADF82FF" alt="Mixed flowers"><div class="product-info"><h3>Big Mixed</h3><div clas"><div class="product-info"><h3>One sided vase arrangement</h3><div class="price">₱550</div><a class="btn order-link" href="#order" data-product="Sunflower">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/754278544_1484177897059416_7638410467861736519_n.jpg?stp=c0.169.1536.1536a_dst-jpg_tt6&cstp=mx1536x1536&ctp=s206x206&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e838&_nc_eui2=AeH7UMAQXeYHfAG00OPNsZR73mSp3IOavJ_eZKncg5q8n4nM8T9LzDU-cVRe6xntBasvZWKni3yxRymcwvYIYXq1&_nc_ohc=ytgzQttq7xoQ7kNvwF6Yd8z&_nc_oc=AdoH3GQ2m_JCqbKNkJc4sFFttAxk1Y5ZVuXTas-HU9gKvuOt-Mc9LhabEsrVn5NBIQs&_nc_zt=23&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=5r596jcr8B1fSxIXG-HGeA&_nc_ss=7b2a8&oh=00_AQOfP-vkRLgKPpUt4R575jZXF4XzqNj1WvIbNbebed_CUg&oe=6ADF6B71" alt="Mixed flowers"><div class="product-info"><h3>Big Mixed</h3><div class="price">₱3,000</div><a class="btn order-link" href="#order" data-product="Big Mixed">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl7-2.fna.fbcdn.net/v/t39.30808-6/757563482_1490191436458062_4635586744696251442_n.jpg?stp=c0.141.1284.1284a_dst-jpg_tt6&cstp=mx1284x1284&ctp=s206x206&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e838&_nc_eui2=AeHZ0ckf7L6Dib8YqDjVM3hvrPG_OYOwEMWs8b85g7AQxY6nIsflEL-2U6q8OpgVe6aG6jAwZtOqV2KPBe75uYlO&_nc_ohc=rOTw06-Q9V4Q7kNvwEmweaB&_nc_oc=Adr5w9jkBT1HpwB1tzaM7IIwadHuSs1Rr5kSqOfuw3gWx1vjKnesQO81eirr0LZ24rM&_nc_zt=23&_nc_ht=scontent.fmnl7-2.fna&_nc_gid=EfQXXes1LHVcsbCzxR97vQ&_nc_ss=7b2a8&oh=00_AQNq9FlDHL4Wzvmu40ezNBgZiYS46ugygY03WwnM1Cbm1A&oe=6ADF9117" alt="Tulips"><div class="product-info"><h3>Tulips</h3><div class="price">₱800</div><a class="btn order-link" href="#order" data-product="Tulips">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="data:image/jpeg;base64,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" alt="White roses"><div class="product-info"><h3>White Roses</h3><div class="price">₱780</div><a class="btn order-link" href="#order" data-product="White Roses">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl33-4.fna.fbcdn.net/v/t39.30808-6/629269016_1344044714406069_6280154221777761506_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeF8sJuXwuvetCtra5s3ktGIkl2IqleJwMSSXYiqV4nAxNWiSV3Zu0yfLHsIKOvIfHh_Gs7mWJKT9KxsZDtEu3R4&_nc_ohc=Jv7yxZ_ybsQQ7kNvwHfX4UO&_nc_oc=AdoBRfInQQZdLs9UOt8Pmi053OOKDA12F5lDgdFDLvA7B3HVZ66IH7CzFcABd_yHwec&_nc_zt=23&_nc_ht=scontent.fmnl33-4.fna&_nc_gid=yPQPp2UohAN0605uEhWlQg&_nc_ss=7b2a8&oh=00_AQMiJrn0ddssygxeUjfbXQ9wwx2FaAQWTSOJojbjj58V4A&oe=6ADF748A" alt="Baby's breath arrangement"><div class="product-info"><h3>Baby's Breath</h3><div class="price">₱550</div><a class="btn order-link" href="#order" data-product="Baby's Breath">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl3-2.fna.fbcdn.net/v/t39.30808-6/621794771_1331139559029918_324630378895483850_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGyZpGt26OY9Dyo-ITrQlqbiYIR0pYhkW2JghHSliGRbVPxUW6B0ql7t18oi90Y7PH9ZiNSVl71nibva1Oq6OT3&_nc_ohc=QIAFtEzKz7EQ7kNvwH22HOK&_nc_oc=AdrFvh-r7wu8lBz1uKBGeG_pJ9rmLaC9Hn5pQ_xbamdyfS572AZT6N-BKj7PsO2oQ-M&_nc_zt=23&_nc_ht=scontent.fmnl3-2.fna&_nc_gid=4VZynTuvfTuq6QthpyGQgQ&_nc_ss=7b2a8&oh=00_AQM0Ad2vVLfqNWVs-vDxLS5ScuAhtlSs2PTFQ1_ZadQDGA&oe=6ADF9012" alt="Carnations"><div class="product-info"><h3>Carnation</h3><div class="price">₱450</div><a class="btn order-link" href="#order" data-product="Carnation">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl33-4.fna.fbcdn.net/v/t39.30808-6/653902139_1373718344772039_4351637104688055836_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEsehitWPI0tlYAv35XCzwBg4vsCKtDcDuDi-wIq0NwO6rJvW4pdruoUidJdYFSBfzv9RhWInKw9Bj-C3co1dLX&_nc_ohc=irHJrVH11sgQ7kNvwGc8V5W&_nc_oc=AdrtL9Q1DUW_Rp0hsaP9yeZ0Fia_afqnfnnrpwFXIYBjG8FIdxKefiE4CW2Cp9xHMOY&_nc_zt=23&_nc_ht=scontent.fmnl33-4.fna&_nc_gid=gVuh3O5Se6dPmmP3gIZJsA&_nc_ss=7b2a8&oh=00_AQMmzcZDrn9J7EuYHD3tuxoR_3A4gqYP1nDo_97NKxsATw&oe=6ADF7FC6" alt="Standing flower arrangement"><div class="product-info"><h3>Funeral Stand Flowers</h3><div class="price">₱2,500</div><a class="btn order-link" href="#order" data-product="Stand Flowers">Order This</a></div></article>
+      <article class="product-card"><img loading="lazy" src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/651918478_1373725314771342_1220026522446031645_n.jpg?stp=c0.169.1536.1536a_dst-jpg_tt6&cstp=mx1536x1536&ctp=s206x206&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e838&_nc_eui2=AeFTCpb-FxKxc26TVbXf0lWLxazxELTwtmzFrPEQtPC2bFp-EL_ZxfY1sqw4rcYzxim1-qefT7DFkRmqmM3wHmMX&_nc_ohc=dDXPJI-2b-kQ7kNvwFTIDyM&_nc_oc=Adp-fliR9IKOr5GxCiUti9CPBQWxs_bI0GD0U1tLHebOgMB55OCVW-ogzZ7wmIoAzns&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=9ajRG5eAKoqMR1E8erhQYA&_nc_ss=7b2a8&oh=00_AQNgLbuhL9Rr7wA6F-XwarJ8rkuIWMtMNS81uDvMv51LdQ&oe=6ADF7FFC"alt="Money Bouquet"><div class="product-info"><h3>Money Bouquet</h3><div class="price">₱`1,500</div><a class="btn order-link" href="#order" data-product="Stand Flowers">Order This</a></div></article>
+      
+</section>
+
+<section class="page" id="about">
+  <div class="section">
+    <div class="section-heading"><h2>More About Us</h2><p>Flowers for the moments you want to remember.</p></div>
+    <div class="about-grid">
+      <article class="info-card"><h3>🏪 About Our Shop</h3><p>Carmina Flower Shop Lucena creates flower arrangements for everyday surprises, celebrations, weddings, and special events.</p></article>
+      <article class="info-card"><h3>💖 Why Choose Us</h3><ul><li>Arrangements for different occasions</li><li>Friendly customer service</li><li>Custom bouquet requests</li><li>Delivery in Lucena and nearby areas</li></ul></article>
+      <article class="info-card"><h3>📍 Visit Us</h3><p>168 P. Gomez, Brgy. 4,<br>Lucena City, Quezon</p><p style="margin-top:10px">Open daily: 8:00 AM–7:00 PM<br>Call/Text: 0939 519 1111</p></article>
+    </div>
+    <div class="banner"><h2 style="color:var(--wine)">Have a special request?</h2><p>Tell us the occasion, preferred colors, and budget.</p><br><a href="https://m.me/carminaflowershop.lucena" class="btn" target="_blank" rel="noopener">Chat With Us</a></div>
+  </div>
+</section>
+
+<section class="page" id="payment">
+  <div class="section">
+    <div class="section-heading"><h2>Payment Options</h2><p>Choose a payment method when confirming your order with the shop.</p></div>
+    <div class="contact-grid">
+      <article class="payment-card" style="text-align:center"><h3>GCash Payment</h3><p>Scan the shop's verified QR code after confirming your order.</p><div class="qr"><img src="https://cdn.pixabay.com/photo/2023/02/28/01/50/qr-code-7819652_1280.jpg" alt="Add the shop's official GCash QR image here" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-size:13px;color:#a5284d&quot;>Place your official GCash QR image here</span>'"></div><p><b>Account:</b> Carmina Flower Shop Lucena</p><p><b>Number:</b> 0939 519 1111</p><p class="empty-note">For safety, verify the account name and amount before sending payment.</p></article>
+      <article class="payment-card"><h3>Accepted Payment Methods</h3><p><span class="tag">✓ GCash</span><span class="tag">✓ Cash on Delivery (confirm availability)</span></p><h3 style="margin-top:25px">Need help with payment?</h3><p>Message the shop to confirm the total, delivery fee, and payment details before paying.</p><br><a href="https://m.me/carminaflowershop.lucena" class="btn" target="_blank" rel="noopener">Message the Shop</a><br><br><a href="https://www.facebook.com/mhinnaflorist/" target="_blank" rel="noopener">Visit Facebook Page</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="order">
+  <div class="section">
+    <div class="section-heading"><h2>Place an Order</h2><p>Fill in your details. Your order summary can be sent to the shop through Messenger.</p></div>
+    <div class="contact-grid">
+      <form class="form-card" id="orderForm">
+        <h3>Order Details</h3>
+        <label for="customer">Full Name</label><input id="customer" name="customer" type="text" placeholder="Enter your full name" required>
+        <label for="email">Email Address (optional)</label><input id="email" name="email" type="email" placeholder="you@example.com">
+        <label for="phone">Contact Number</label><input id="phone" name="phone" type="tel" placeholder="09XX XXX XXXX" required>
+        <label for="product">Flower Arrangement</label><select id="product" name="product" required><option value="">Select a product</option><option>Roses — ₱600</option><option>12 Roses Mix — ₱1,500</option><option>Big Surprise Flowers — ₱3,000</option><option>Sunflower — ₱550</option><option>Big Mixed — ₱3,000</option><option>Tulips — ₱800</option><option>White Roses — ₱780</option><option>Baby's Breath — ₱550</option><option>Carnation — ₱450</option><option>Stand Flowers — ₱2,500</option><option>Money Bouquet — ₱1,500</option><option>Custom Arrangement — discuss price</option></select>
+        <label for="date">Preferred Delivery Date</label><input id="date" name="date" type="date" required>
+        <label for="address">Delivery Address</label><textarea id="address" name="address" placeholder="House number, street, barangay, city" required></textarea>
+        <label for="notes">Message / Special Requests</label><textarea id="notes" name="notes" placeholder="Colors, occasion, budget, card message (optional)"></textarea>
+        <button type="submit" class="btn">Prepare Order in Messenger</button>
+        <p id="formNotice" class="notice" role="status"></p>
+      </form>
+      <article class="info-card"><h3>Before You Order</h3><p>1. Choose your preferred flowers.</p><p>2. Provide your delivery information.</p><p>3. Confirm the final price, delivery fee, and availability with the shop.</p><p style="margin-top:15px">Orders are not confirmed until the shop replies to you.</p><br><a href="https://m.me/carminaflowershop.lucena" target="_blank" rel="noopener" class="btn">Open Messenger</a></article>
+    </div>
+
+<section id="reviews" class="reviews-section">
+  <div class="reviews-heading">
+    <span class="reviews-label">💗 YOUR LOVE MEANS EVERYTHING</span>
+    <h2>Customer Reviews</h2>
+    <p>Read what our lovely customers say about their flower orders.</p>
+  </div>
+
+  <div id="reviewList" class="review-list">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <h3>Beautiful Bouquet! 💐</h3>
+      <p>"Ang ganda ng flowers! Maayos ang arrangement at perfect na gift para kay Mama."</p>
+      <span class="reviewer">— Mhinna Del</span>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <h3>Highly Recommended! 🌷</h3>
+      <p>"Very beautiful flowers and lovely design. Perfect for a special occasion!"</p>
+      <span class="reviewer">— Rosa</span>
+    </div>
+  </div>
+
+  <div class="review-form-box">
+    <h3>Share Your Experience 💌</h3>
+    <p>We would love to hear about your experience!</p>
+
+    <form id="reviewForm">
+      <label for="reviewName">Your Name</label>
+      <input id="reviewName" type="text"
+        placeholder="Enter your name" required maxlength="50">
+
+      <label for="reviewRating">Your Rating</label>
+      <select id="reviewRating" required>
+        <option value="5">★★★★★ - Excellent</option>
+        <option value="4">★★★★☆ - Very Good</option>
+        <option value="3">★★★☆☆ - Good</option>
+        <option value="2">★★☆☆☆ - Fair</option>
+        <option value="1">★☆☆☆☆ - Poor</option>
+      </select>
+
+      <label for="reviewComment">Your Comment</label>
+      <textarea id="reviewComment"
+        placeholder="Write your review here..."
+        required maxlength="500"></textarea>
+
+      <button type="submit" class="review-submit">
+        Submit Review 💗
+      </button>
+    </form>
+
+    <p class="review-note">
+      Note: Reviews submitted in this demo are saved only in this browser.
+    </p>
+  </div>
+</section>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>🌸 Carmina Flower Shop Lucena</strong><br>
+  168 P. Gomez, Brgy. 4, Lucena City, Quezon<br>
+  <a href="https://www.facebook.com/carminaflowershop.lucena" target="_blank" rel="noopener">Facebook: @carminaflowershop.lucena</a><br>
+  © 2026 Carmina Flower Shop Lucena. All rights reserved.
+</footer>
+
+<script>
+const pages = [...document.querySelectorAll('.page')];
+const navLinks = [...document.querySelectorAll('nav a[data-page]')];
+
+function showPage(pageId, updateHash = true) {
+  const target = document.getElementById(pageId) || document.getElementById('home');
+  pages.forEach(page => page.classList.toggle('active', page === target));
+  navLinks.forEach(link => link.classList.toggle('active', link.dataset.page === target.id));
+  if (updateHash && location.hash !== '#' + target.id) history.pushState(null, '', '#' + target.id);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+document.addEventListener('click', event => {
+  const link = event.target.closest('[data-page]');
+  if (link) {
+    event.preventDefault();
+    showPage(link.dataset.page);
+  }
+});
+window.addEventListener('popstate', () => showPage(location.hash.slice(1) || 'home', false));
+window.addEventListener('DOMContentLoaded', () => showPage(location.hash.slice(1) || 'home', false));
+
+document.querySelectorAll('.order-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const selected = link.dataset.product;
+    const select = document.getElementById('product');
+    const option = [...select.options].find(item => item.text.toLowerCase().startsWith(selected.toLowerCase()));
+    if (option) select.value = option.value;
+  });
+});
+
+document.getElementById('orderForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  const message = [
+    'Hello Carmina Flower Shop Lucena! I would like to place an order.',
+    'Name: ' + data.get('customer'),
+    'Email: ' + (data.get('email') || 'Not provided'),
+    'Contact: ' + data.get('phone'),
+    'Product: ' + data.get('product'),
+    'Preferred delivery date: ' + data.get('date'),
+    'Delivery address: ' + data.get('address'),
+    'Special requests: ' + (data.get('notes') || 'None')
+  ].join('\n');
+  const notice = document.getElementById('formNotice');
+  notice.textContent = 'Your order details are ready. Messenger will open in a new tab; paste your order message into the chat and send it.';
+  notice.style.display = 'block';
+  window.open('https://m.me/carminaflowershop.lucena?ref=' + encodeURIComponent(message), '_blank', 'noopener');
+});
+
+
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", function() {
+  nav.classList.toggle("active");
+});
+
+
+function makeFlowerSparkles(x, y) {
+  const flowers = ["🌸", "🌷", "✨", "💖", "🌺", "⭐"];
+
+  for (let i = 0; i < 12; i++) {
+    const flower = document.createElement("span");
+
+    flower.className = "sparkle-flower";
+    flower.textContent =
+      flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = x + "px";
+    flower.style.top = y + "px";
+    flower.style.setProperty(
+      "--moveX",
+      (Math.random() * 160 - 80) + "px"
+    );
+
+    document.body.appendChild(flower);
+
+    setTimeout(function() {
+      flower.remove();
+    }, 1300);
+  }
+}
+
+document.querySelectorAll(
+  ".product-card img, .flower-image"
+).forEach(function(img) {
+  img.addEventListener("click", function(event) {
+    makeFlowerSparkles(event.clientX, event.clientY);
+
+    img.classList.remove("sparkle-glow");
+    void img.offsetWidth;
+    img.classList.add("sparkle-glow");
+  });
+});
+
+const viewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+const closeViewer = document.getElementById("closeViewer");
+
+document.querySelectorAll(".product-card img").forEach(function(img) {
+  img.addEventListener("click", function() {
+    viewerImage.src = img.src;
+    viewerImage.alt = img.alt || "Flower bouquet";
+    viewer.classList.add("active");
+  });
+});
+
+closeViewer.addEventListener("click", function() {
+  viewer.classList.remove("active");
+});
+
+viewer.addEventListener("click", function(event) {
+  if (event.target === viewer) {
+    viewer.classList.remove("active");
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    viewer.classList.remove("active");
+  }
+});
+
+const reviewForm = document.getElementById("reviewForm");
+const reviewList = document.getElementById("reviewList");
+
+function loadCustomerReviews() {
+  const savedReviews = JSON.parse(
+    localStorage.getItem("carminaReviews") || "[]"
+  );
+
+  savedReviews.forEach(review => {
+    displayReview(review, false);
+  });
+}
+
+function displayReview(review, addToTop = true) {
+  const card = document.createElement("div");
+  card.className = "review-card";
+
+  const stars = document.createElement("div");
+  stars.className = "review-stars";
+  stars.textContent =
+    "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+  const heading = document.createElement("h3");
+  heading.textContent = "Customer Feedback 💗";
+
+  const comment = document.createElement("p");
+  comment.textContent = '"' + review.comment + '"';
+
+  const name = document.createElement("span");
+  name.className = "reviewer";
+  name.textContent = "— " + review.name;
+
+  card.append(stars, heading, comment, name);
+
+  if (addToTop) {
+    reviewList.prepend(card);
+  } else {
+    reviewList.append(card);
+  }
+}
+
+reviewForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const review = {
+    name: document.getElementById("reviewName").value.trim(),
+    rating: Number(document.getElementById("reviewRating").value),
+    comment: document.getElementById("reviewComment").value.trim()
+  };
+
+  if (!review.name || !review.comment) {
+    alert("Please complete all fields.");
+    return;
+  }
+
+  displayReview(review);
+
+  const savedReviews = JSON.parse(
+    localStorage.getItem("carminaReviews") || "[]"
+  );
+
+  savedReviews.unshift(review);
+  localStorage.setItem(
+    "carminaReviews",
+    JSON.stringify(savedReviews)
+  );
+
+  reviewForm.reset();
+  alert("Thank you for sharing your review! 💐");
+});
+
+loadCustomerReviews();
+
+
+</script>
+</body>
+</html>
